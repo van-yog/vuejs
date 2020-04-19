@@ -1,17 +1,29 @@
+Vue.filter("capatilize", (value) => {
+  if (!value) return "";
+  value = value.toString();
+  return value.replace(/\b\w/g, (l) => l.toUpperCase());
+});
+
 new Vue({
   el: "#app",
   data: {
-    value: 10,
-  },
-  methods: {
-    increment(value) {
-      this.value = value;
-      if (value == 25) alert("25");
-    },
+    show: false,
+    message: "Hello, world super puper",
+    cars: [
+      { model: "BMW", speed: 250.8 },
+      { model: "Audi", speed: 240.21 },
+      { model: "Mercedes-Benz", speed: 350.4 },
+      { model: "Ford", speed: 168.5 },
+    ],
   },
   computed: {
-    doubleValue() {
-      return this.value * 2;
+    showMess() {
+      return this.message.toUpperCase();
+    },
+  },
+  filters: {
+    lowercase(value) {
+      return value.toLowerCase();
     },
   },
 });

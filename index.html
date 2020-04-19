@@ -11,13 +11,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
     <div id="app">
-      <input type="text" v-on:input="increment( $event.target.value)" />
-      <p>
-        {{value}}
+      <button @click="show = !show">Скрыть или показать</button>
+      <p v-if="show">
+        Текст, который может стать невидимым
       </p>
-      <p>
-        {{doubleValue}}
+
+      <p v-else>
+        {{message | lowercase | capatilize}}
       </p>
+
+      <ul style="list-style: none;">
+        <li v-for="(car, i) in cars">{{i+1}} - {{car.model}}, скорость: {{ car.speed}}</li>
+      </ul>
     </div>
 
     <script src="./src/js/index.js"></script>
