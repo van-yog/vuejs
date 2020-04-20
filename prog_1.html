@@ -20,11 +20,15 @@
         {{message | lowercase | capatilize}}
       </p>
 
+      <p>
+        {{showMess}}
+      </p>
+
       <ul style="list-style: none;">
         <li v-for="(car, i) in cars">{{i+1}} - {{car.model}}, скорость: {{ car.speed}}</li>
       </ul>
     </div>
 
-    <script src="./src/js/index.js"></script>
+    <script src="./src/js/prog_1.js"></script>
   </body>
 </html>
